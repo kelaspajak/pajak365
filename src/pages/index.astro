@@ -3,128 +3,76 @@ import Layout from '../layouts/base.astro'
 ---
 
 <Layout id="main-container">
-  <!-- Icon Blocks -->
-  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6">
-      <!-- Card -->
-      <a
-        class="group flex gap-y-6 size-full hover:bg-gray-100 focus:outline-none focus:bg-gray-100 rounded-lg p-5"
-        href="#"
-      >
-        <svg
-          class="shrink-0 size-8 text-gray-800 mt-0.5 me-6"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          ><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle
-            cx="8.5"
-            cy="7.5"
-            r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path
-            d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"
-          ></path></svg
+  <!-- Hero -->
+  <div class="bg-gradient-to-b from-violet-600/10 via-transparent">
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-8">
+      <!-- Title -->
+      <div class="max-w-3xl text-center mx-auto">
+        <h1 class="block font-medium text-gray-900/90 text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
+          Akses dokumen perpajakan secara instan kapan saja dan di mana saja.
+        </h1>
+      </div>
+      <!-- End Title -->
+
+      <div class="max-w-3xl text-center mx-auto">
+        <p class="text-lg text-black/70">
+          Kami membantu wajib pajak memperoleh dokumen perpajakan yang cepat, akurat, dan sesuai regulasi, memberikan
+          mereka ketenangan pikiran dan lebih banyak waktu untuk fokus pada bisnis mereka.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="text-center">
+        <a
+          class="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-blue-600 to-violet-600 shadow-lg shadow-transparent hover:shadow-blue-700/50 border border-transparent text-white text-sm font-medium rounded-full focus:outline-none focus:shadow-blue-700/50 py-3 px-6"
+          href="#"
         >
-
-        <div>
-          <div>
-            <h3 class="block font-bold text-gray-800">Build your portfolio</h3>
-            <p class="text-gray-600">The simplest way to keep your portfolio always up-to-date.</p>
-          </div>
-
-          <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
-            Learn more
-            <svg
-              class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
-            >
-          </p>
-        </div>
-      </a>
-      <!-- End Card -->
+          Get started
+          <svg
+            class="shrink-0 size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
+          >
+        </a>
+      </div>
+      <!-- End Buttons -->
     </div>
   </div>
-  <!-- End Icon Blocks -->
+  <!-- End Hero -->
 
-  <div
-    class="mx-auto mt-52 w-full max-w-container px-4 pb-20 sm:mt-36 sm:px-6 sm:pb-24 lg:mt-28 lg:px-8 lg:pb-32 xl:mt-36"
-  >
+  <div class="mx-auto mt-52 w-full max-w-screen-xl px-4 pb-20 sm:mt-36 sm:px-6 sm:pb-24 lg:mt-28 lg:px-8 lg:pb-32">
     <div class="mx-auto max-w-[40rem] space-y-20 divide-y divide-slate-200 sm:space-y-24 lg:max-w-none lg:space-y-32">
-      <section class="grid grid-cols-1 items-baseline gap-x-6 gap-y-10 lg:grid-cols-3">
-        <h2 class="text-2xl/9 font-semibold tracking-tight text-slate-900">What’s included</h2><div
-          class="max-w-2xl space-y-10 lg:col-span-2 prose prose-sm prose-slate prose-a:font-semibold prose-a:text-sky-500 prose-a:no-underline hover:prose-a:text-sky-600 prose-code:text-[13px]/[1.692] prose-pre:rounded-lg prose-pre:px-4 prose-pre:py-[0.875rem]"
-        >
-          <div class="[&>:first-child]:mt-0 [&>:last-child]:mb-0">
-            <p>
-              Catalyst is a modern application UI kit built with Tailwind CSS, Headless UI and React, designed and built
-              by the Tailwind CSS team. It's a collection of beautiful, production-ready UI components you drop into
-              your projects alongside your own code that are yours to customize, adapt, and make your own.
-            </p>
-            <p>
-              Skip all the time you'd spend building your own buttons, form controls, dialogs, tables, dropdown menus,
-              and more and hit the ground running with carefully crafted component APIs that are a delight to use.
-            </p>
-          </div><div class="space-y-10">
-            <p>
-              <strong>Built by experts</strong> — you can trust that all of the code is written following Tailwind CSS best
-              practices, because it’s written by the same team who created and maintain the framework.
-            </p>
-            <p>
-              <strong>Easy to customize</strong> — everything is styled with utility classes, directly in the component markup.
-              No configuration variables or complex CSS to wrestle with, just open any component in your editor and change
-              whatever you want.
-            </p>
-            <p>
-              <strong>Built with React</strong> — well-structured, thoughtfully designed React components, built by experts
-              with years of React experience. Benefit from the strength and maturity of the React ecosystem.
-            </p>
-            <p>
-              <strong>Keyboard accessible</strong> — everything we build is keyboard accessible, and we carefully craft the
-              markup to deliver the best screenreader experience we know how.
-            </p>
-            <p>
-              <strong>TypeScript or JavaScript</strong> — authored with the latest version of TypeScript by nerds who get
-              way too much satisfaction out of getting the types just right, giving you the best possible developer experience.
-              We also include a plain JavaScript version, just in case TypeScript isn't your thing.
-            </p>
+      <section class="grid grid-cols-1 gap-x-6 gap-y-10 pt-10 lg:grid-cols-3">
+        <h2 class="text-2xl/9 font-semibold tracking-tight text-slate-900">Layanan Premium</h2>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2">
+          <div
+            class="flex flex-col bg-gray-50 border border-gray-200 overflow-hidden rounded-xl text-center h-full dark:bg-neutral-800 dark:border-neutral-700"
+          >
+            <div class="p-4 md:p-8">
+              <span
+                class="mb-1 inline-block bg-blue-50 border border-blue-300 text-blue-600 text-[.6125rem] leading-4 uppercase rounded-md py-0.5 px-2 dark:bg-blue-900/70 dark:border-blue-700 dark:text-blue-500"
+                >New</span
+              >
+              <h3 class="text-lg md:text-2xl font-semibold text-gray-800 dark:text-neutral-200">Variables</h3>
+              <p class="mt-1 text-gray-600 dark:text-neutral-400">
+                Created adaptable designs with variables - from colors to spacing and border radius.
+              </p>
+            </div>
+            <!-- <div class="mt-auto">
+              <img src="./assets/img/mockups/img6.png" alt="Figma Tokens">
+            </div> -->
           </div>
         </div>
-      </section><section class="grid grid-cols-1 gap-x-6 gap-y-10 pt-10 lg:grid-cols-3">
-        <h2 class="text-2xl/9 font-semibold tracking-tight text-slate-900">Screenshots 0123456789</h2><div
-          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2"
-        >
-          <img
-            src="https://tailwindui.com/plus/img/templates/catalyst/detail-01.png"
-            alt="This is a detail image"
-            class="aspect-[384/246] rounded-lg bg-slate-200 ring-1 ring-slate-900/10"
-          /><img
-            src="https://tailwindui.com/plus/img/templates/catalyst/detail-02.png"
-            alt="This is a detail image"
-            class="aspect-[384/246] rounded-lg bg-slate-200 ring-1 ring-slate-900/10"
-          /><img
-            src="https://tailwindui.com/plus/img/templates/catalyst/detail-03.png"
-            alt="This is a detail image"
-            class="aspect-[384/246] rounded-lg bg-slate-200 ring-1 ring-slate-900/10"
-          /><img
-            src="https://tailwindui.com/plus/img/templates/catalyst/detail-04.png"
-            alt="This is a detail image"
-            class="aspect-[384/246] rounded-lg bg-slate-200 ring-1 ring-slate-900/10"
-          />
-        </div>
-      </section><section class="grid grid-cols-1 gap-x-6 gap-y-10 pt-10 lg:grid-cols-3">
-        <h2 class="text-2xl/9 font-semibold tracking-tight text-slate-900">Built for developers</h2><div
+      </section>
+      <section class="grid grid-cols-1 gap-x-6 gap-y-10 pt-10 lg:grid-cols-3">
+        <h2 class="text-2xl/9 font-semibold tracking-tight text-slate-900">Free tools</h2><div
           class="max-w-none lg:col-span-2 prose prose-sm prose-slate prose-a:font-semibold prose-a:text-sky-500 prose-a:no-underline hover:prose-a:text-sky-600 prose-code:text-[13px]/[1.692] prose-pre:rounded-lg prose-pre:px-4 prose-pre:py-[0.875rem]"
         >
           <p>
