@@ -7,6 +7,8 @@ import node from '@astrojs/node'
 import { provider } from 'std-env'
 import sentry from '@sentry/astro'
 
+import tailwind from '@astrojs/tailwind'
+
 const providers = {
   vercel: vercel({
     isr: false,
@@ -28,29 +30,27 @@ const adapterProvider = process.env.SERVER_ADAPTER || provider
 export default defineConfig({
   output: 'server',
   adapter: providers[adapterProvider] || providers.node,
-  integrations: [
-    ...(process.env.SENTRY_DSN
-      ? [
-          sentry({
-            enabled: {
-              client: false,
-              server: process.env.SENTRY_DSN,
-            },
-            dsn: process.env.SENTRY_DSN,
-            sourceMapsUploadOptions: {
-              enabled: process.env.SENTRY_PROJECT && process.env.SENTRY_AUTH_TOKEN,
-              project: process.env.SENTRY_PROJECT,
-              authToken: process.env.SENTRY_AUTH_TOKEN,
-            },
-          }),
-        ]
-      : []),
-  ],
+  integrations: [...(process.env.SENTRY_DSN
+    ? [
+        sentry({
+          enabled: {
+            client: false,
+            server: process.env.SENTRY_DSN,
+          },
+          dsn: process.env.SENTRY_DSN,
+          sourceMapsUploadOptions: {
+            enabled: process.env.SENTRY_PROJECT && process.env.SENTRY_AUTH_TOKEN,
+            project: process.env.SENTRY_PROJECT,
+            authToken: process.env.SENTRY_AUTH_TOKEN,
+          },
+        }),
+      ]
+    : []), tailwind()],
   vite: {
     ssr: {
       noExternal: process.env.DOCKER ? !!process.env.DOCKER : undefined,
       external: [
-        ...adapterProvider === 'cloudflare_pages'
+        ...(adapterProvider === 'cloudflare_pages'
           ? [
               'module',
               'url',
@@ -82,7 +82,7 @@ export default defineConfig({
               'node:child_process',
               'node:inspector',
             ]
-          : [],
+          : []),
       ],
     },
   },
