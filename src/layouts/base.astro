@@ -2,6 +2,7 @@
 import { SEO } from 'astro-seo'
 import { getEnv } from '../lib/env'
 import Navbar from '../components/navbar.astro'
+import '../assets/global.css'
 
 const { SITE_URL, RSS_URL, RSS_PREFIX } = Astro.locals
 const { channel } = Astro.props
@@ -69,6 +70,10 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
         navigation: auto; /* enabled */
       }
     </style>
+    <!-- HTML in your document's head -->
+    <link rel="preconnect" href="https://rsms.me/" />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
     <SEO
       titleTemplate={`%s | ${channel?.title}`}
       titleDefault={[channel?.title, seoParams.description].filter(Boolean).join(' - ')}

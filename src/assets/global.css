@@ -6,6 +6,21 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+/* CSS */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1,
+    'ss02' 1,
+    'tnum' 1; /* fix for Chrome */
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
