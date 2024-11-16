@@ -14,31 +14,43 @@ const cache = new LRUCache({
 })
 
 function getVideoStickers($, item, { staticProxy, index }) {
-  return $(item).find('.js-videosticker_video')?.map((_index, video) => {
-    const url = $(video)?.attr('src')
-    const imgurl = $(video).find('img')?.attr('src')
-    return `
+  return $(item)
+    .find('.js-videosticker_video')
+    ?.map((_index, video) => {
+      const url = $(video)?.attr('src')
+      const imgurl = $(video).find('img')?.attr('src')
+      return `
     <div style="background-image: none; width: 256px;">
       <video src="${staticProxy + url}" width="100%" height="100%" alt="Video Sticker" preload muted autoplay loop playsinline disablepictureinpicture >
         <img class="sticker" src="${staticProxy + imgurl}" alt="Video Sticker" loading="${index > 15 ? 'eager' : 'lazy'}" />
       </video>
     </div>
     `
-  })?.get()?.join('')
+    })
+    ?.get()
+    ?.join('')
 }
 
 function getImageStickers($, item, { staticProxy, index }) {
-  return $(item).find('.tgme_widget_message_sticker')?.map((_index, image) => {
-    const url = $(image)?.attr('data-webp')
-    return `<img class="sticker" src="${staticProxy + url}" style="width: 256px;" alt="Sticker" loading="${index > 15 ? 'eager' : 'lazy'}" />`
-  })?.get()?.join('')
+  return $(item)
+    .find('.tgme_widget_message_sticker')
+    ?.map((_index, image) => {
+      const url = $(image)?.attr('data-webp')
+      return `<img class="sticker" src="${staticProxy + url}" style="width: 256px;" alt="Sticker" loading="${index > 15 ? 'eager' : 'lazy'}" />`
+    })
+    ?.get()
+    ?.join('')
 }
 
 function getImages($, item, { staticProxy, id, index, title }) {
-  const images = $(item).find('.tgme_widget_message_photo_wrap')?.map((_index, photo) => {
-    const url = $(photo).attr('style').match(/url\(["'](.*?)["']/)?.[1]
-    const popoverId = `modal-${id}-${_index}`
-    return `
+  const images = $(item)
+    .find('.tgme_widget_message_photo_wrap')
+    ?.map((_index, photo) => {
+      const url = $(photo)
+        .attr('style')
+        .match(/url\(["'](.*?)["']/)?.[1]
+      const popoverId = `modal-${id}-${_index}`
+      return `
       <button class="image-preview-button image-preview-wrap" popovertarget="${popoverId}" popovertargetaction="show">
         <img src="${staticProxy + url}" alt="${title}" loading="${index > 15 ? 'eager' : 'lazy'}" />
       </button>
@@ -46,43 +58,56 @@ function getImages($, item, { staticProxy, id, index, title }) {
         <img class="modal-img" src="${staticProxy + url}" alt="${title}" loading="lazy" />
       </button>
     `
-  })?.get()
-  return images.length ? `<div class="image-list-container ${images.length % 2 === 0 ? 'image-list-even' : 'image-list-odd'}">${images?.join('')}</div>` : ''
+    })
+    ?.get()
+  return images.length
+    ? `<div class="image-list-container ${images.length % 2 === 0 ? 'image-list-even' : 'image-list-odd'}">${images?.join('')}</div>`
+    : ''
 }
 
 function getVideo($, item, { staticProxy, index }) {
   const video = $(item).find('.tgme_widget_message_video_wrap video')
-  video?.attr('src', staticProxy + video?.attr('src'))
+  video
+    ?.attr('src', staticProxy + video?.attr('src'))
     ?.attr('controls', true)
     ?.attr('preload', index > 15 ? 'auto' : 'metadata')
-    ?.attr('playsinline', true).attr('webkit-playsinline', true)
+    ?.attr('playsinline', true)
+    .attr('webkit-playsinline', true)
 
   const roundVideo = $(item).find('.tgme_widget_message_roundvideo_wrap video')
-  roundVideo?.attr('src', staticProxy + roundVideo?.attr('src'))
+  roundVideo
+    ?.attr('src', staticProxy + roundVideo?.attr('src'))
     ?.attr('controls', true)
     ?.attr('preload', index > 15 ? 'auto' : 'metadata')
-    ?.attr('playsinline', true).attr('webkit-playsinline', true)
+    ?.attr('playsinline', true)
+    .attr('webkit-playsinline', true)
   return $.html(video) + $.html(roundVideo)
 }
 
 function getAudio($, item, { staticProxy }) {
   const audio = $(item).find('.tgme_widget_message_voice')
-  audio?.attr('src', staticProxy + audio?.attr('src'))
-    ?.attr('controls', true)
+  audio?.attr('src', staticProxy + audio?.attr('src'))?.attr('controls', true)
   return $.html(audio)
 }
 
 function getLinkPreview($, item, { staticProxy, index }) {
   const link = $(item).find('.tgme_widget_message_link_preview')
-  const title = $(item).find('.link_preview_title')?.text() || $(item).find('.link_preview_site_name')?.text()
+  const title
+    = $(item).find('.link_preview_title')?.text()
+    || $(item).find('.link_preview_site_name')?.text()
   const description = $(item).find('.link_preview_description')?.text()
 
-  link?.attr('target', '_blank').attr('rel', 'noopener').attr('title', description)
+  link
+    ?.attr('target', '_blank')
+    .attr('rel', 'noopener')
+    .attr('title', description)
 
   const image = $(item).find('.link_preview_image')
   const src = image?.attr('style')?.match(/url\(["'](.*?)["']/i)?.[1]
   const imageSrc = src ? staticProxy + src : ''
-  image?.replaceWith(`<img class="link_preview_image" alt="${title}" src="${imageSrc}" loading="${index > 15 ? 'eager' : 'lazy'}" />`)
+  image?.replaceWith(
+    `<img class="link_preview_image" alt="${title}" src="${imageSrc}" loading="${index > 15 ? 'eager' : 'lazy'}" />`,
+  )
   return $.html(link)
 }
 
@@ -93,7 +118,10 @@ function getReply($, item, { channel }) {
   const href = reply?.attr('href')
   if (href) {
     const url = new URL(href)
-    reply?.attr('href', `${url.pathname}`.replace(new RegExp(`/${channel}/`, 'i'), '/posts/'))
+    reply?.attr(
+      'href',
+      `${url.pathname}`.replace(new RegExp(`/${channel}/`, 'i'), '/posts/'),
+    )
   }
 
   return $.html(reply)
@@ -101,47 +129,79 @@ function getReply($, item, { channel }) {
 
 function modifyHTMLContent($, content, { index } = {}) {
   $(content).find('.emoji')?.removeAttr('style')
-  $(content).find('a')?.each((_index, a) => {
-    $(a)?.attr('title', $(a)?.text())?.removeAttr('onclick')
-  })
-  $(content).find('tg-spoiler')?.each((_index, spoiler) => {
-    const id = `spoiler-${index}-${_index}`
-    $(spoiler)?.attr('id', id)
-      ?.wrap('<label class="spoiler-button"></label>')
-      ?.before(`<input type="checkbox" />`)
-  })
-  $(content).find('pre').each((_index, pre) => {
-    try {
-      $(pre).find('br')?.replaceWith('\n')
+  $(content)
+    .find('a')
+    ?.each((_index, a) => {
+      $(a)?.attr('title', $(a)?.text())?.removeAttr('onclick')
+    })
+  $(content)
+    .find('tg-spoiler')
+    ?.each((_index, spoiler) => {
+      const id = `spoiler-${index}-${_index}`
+      $(spoiler)
+        ?.attr('id', id)
+        ?.wrap('<label class="spoiler-button"></label>')
+        ?.before(`<input type="checkbox" />`)
+    })
+  $(content)
+    .find('pre')
+    .each((_index, pre) => {
+      try {
+        $(pre).find('br')?.replaceWith('\n')
 
-      const code = $(pre).text()
-      const language = flourite(code, { shiki: true, noUnknown: true })?.language || 'text'
-      const highlightedCode = prism.highlight(code, prism.languages[language], language)
-      $(pre).html(`<code class="language-${language}">${highlightedCode}</code>`)
-    }
-    catch (error) {
-      console.error(error)
-    }
-  })
+        const code = $(pre).text()
+        const language
+          = flourite(code, { shiki: true, noUnknown: true })?.language || 'text'
+        const highlightedCode = prism.highlight(
+          code,
+          prism.languages[language],
+          language,
+        )
+        $(pre).html(
+          `<code class="language-${language}">${highlightedCode}</code>`,
+        )
+      }
+      catch (error) {
+        console.error(error)
+      }
+    })
   return content
 }
 
 function getPost($, item, { channel, staticProxy, index = 0 }) {
   item = item ? $(item).find('.tgme_widget_message') : $('.tgme_widget_message')
-  const content = $(item).find('.js-message_reply_text')?.length > 0
-    ? modifyHTMLContent($, $(item).find('.tgme_widget_message_text.js-message_text'), { index })
-    : modifyHTMLContent($, $(item).find('.tgme_widget_message_text'), { index })
-  const title = content?.text()?.match(/^.*?(?=[。\n]|http\S)/g)?.[0] ?? content?.text() ?? ''
-  const id = $(item).attr('data-post')?.replace(new RegExp(`${channel}/`, 'i'), '')
+  const content
+    = $(item).find('.js-message_reply_text')?.length > 0
+      ? modifyHTMLContent(
+        $,
+        $(item).find('.tgme_widget_message_text.js-message_text'),
+        { index },
+      )
+      : modifyHTMLContent($, $(item).find('.tgme_widget_message_text'), {
+        index,
+      })
+  const title
+    = content?.text()?.match(/^.*?(?=[。\n]|http\S)/g)?.[0]
+    ?? content?.text()
+    ?? ''
+  const id = $(item)
+    .attr('data-post')
+    ?.replace(new RegExp(`${channel}/`, 'i'), '')
 
-  const tags = $(content).find('a[href^="?q="]')?.each((_index, a) => {
-    $(a)?.attr('href', `/search/${encodeURIComponent($(a)?.text())}`)
-  })?.map((_index, a) => $(a)?.text()?.replace('#', ''))?.get()
+  const tags = $(content)
+    .find('a[href^="?q="]')
+    ?.each((_index, a) => {
+      $(a)?.attr('href', `/search/${encodeURIComponent($(a)?.text())}`)
+    })
+    ?.map((_index, a) => $(a)?.text()?.replace('#', ''))
+    ?.get()
 
   return {
     id,
     title,
-    type: $(item).attr('class')?.includes('service_message') ? 'service' : 'text',
+    type: $(item).attr('class')?.includes('service_message')
+      ? 'service'
+      : 'text',
     datetime: $(item).find('.tgme_widget_message_date time')?.attr('datetime'),
     tags,
     text: content?.text(),
@@ -159,21 +219,27 @@ function getPost($, item, { channel, staticProxy, index = 0 }) {
       $.html($(item).find('.tgme_widget_message_video_player.not_supported')),
       $.html($(item).find('.tgme_widget_message_location_wrap')),
       getLinkPreview($, item, { staticProxy, index }),
-    ].filter(Boolean).join('').replace(/(url\(["'])((https?:)?\/\/)/g, (match, p1, p2, _p3) => {
-      if (p2 === '//') {
-        p2 = 'https://'
-      }
-      if (p2?.startsWith('t.me')) {
-        return false
-      }
-      return `${p1}${staticProxy}${p2}`
-    }),
+    ]
+      .filter(Boolean)
+      .join('')
+      .replace(/(url\(["'])((https?:)?\/\/)/g, (match, p1, p2, _p3) => {
+        if (p2 === '//') {
+          p2 = 'https://'
+        }
+        if (p2?.startsWith('t.me')) {
+          return false
+        }
+        return `${p1}${staticProxy}${p2}`
+      }),
   }
 }
 
 const unnessaryHeaders = ['host', 'cookie', 'origin', 'referer']
 
-export async function getChannelInfo(Astro, { before = '', after = '', q = '', type = 'list', id = '' } = {}) {
+export async function getChannelInfo(
+  Astro,
+  { before = '', after = '', q = '', type = 'list', id = '' } = {},
+) {
   const cacheKey = JSON.stringify({ before, after, q, type, id })
   const cachedResult = cache.get(cacheKey)
 
@@ -185,9 +251,12 @@ export async function getChannelInfo(Astro, { before = '', after = '', q = '', t
   // Where t.me can also be telegram.me, telegram.dog
   const host = getEnv(import.meta.env, Astro, 'TELEGRAM_HOST') ?? 't.me'
   const channel = getEnv(import.meta.env, Astro, 'CHANNEL')
-  const staticProxy = getEnv(import.meta.env, Astro, 'STATIC_PROXY') ?? '/static/'
+  const staticProxy
+    = getEnv(import.meta.env, Astro, 'STATIC_PROXY') ?? '/static/'
 
-  const url = id ? `https://${host}/${channel}/${id}?embed=1&mode=tme` : `https://${host}/s/${channel}`
+  const url = id
+    ? `https://${host}/${channel}/${id}?embed=1&mode=tme`
+    : `https://${host}/s/${channel}`
   const headers = Object.fromEntries(Astro.request.headers)
 
   Object.keys(headers).forEach((key) => {
@@ -214,15 +283,22 @@ export async function getChannelInfo(Astro, { before = '', after = '', q = '', t
     cache.set(cacheKey, post)
     return post
   }
-  const posts = $('.tgme_channel_history  .tgme_widget_message_wrap')?.map((index, item) => {
-    return getPost($, item, { channel, staticProxy, index })
-  })?.get()?.reverse().filter(post => ['text'].includes(post.type) && post.id && post.content)
+  const posts = $('.tgme_channel_history  .tgme_widget_message_wrap')
+    ?.map((index, item) => {
+      return getPost($, item, { channel, staticProxy, index })
+    })
+    ?.get()
+    ?.reverse()
+    .filter(post => ['text'].includes(post.type) && post.id && post.content)
 
   const channelInfo = {
     posts,
     title: $('.tgme_channel_info_header_title')?.text(),
     description: $('.tgme_channel_info_description')?.text(),
-    descriptionHTML: modifyHTMLContent($, $('.tgme_channel_info_description'))?.html(),
+    descriptionHTML: modifyHTMLContent(
+      $,
+      $('.tgme_channel_info_description'),
+    )?.html(),
     avatar: $('.tgme_page_photo_image img')?.attr('src'),
   }
 

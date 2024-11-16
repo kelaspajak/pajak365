@@ -26,15 +26,30 @@ export async function GET(Astro) {
       description: item.description,
       pubDate: new Date(item.datetime),
       content: sanitizeHtml(item.content, {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img', 'video', 'audio']),
+        allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+          'img',
+          'video',
+          'audio',
+        ]),
         allowedAttributes: {
           ...sanitizeHtml.defaults.allowedAttributes,
           video: ['src', 'width', 'height', 'poster'],
           audio: ['src', 'controls'],
-          img: ['src', 'srcset', 'alt', 'title', 'width', 'height', 'loading', 'class'],
+          img: [
+            'src',
+            'srcset',
+            'alt',
+            'title',
+            'width',
+            'height',
+            'loading',
+            'class',
+          ],
         },
         exclusiveFilter(frame) {
-          return frame.tag === 'img' && frame.attribs?.class?.includes('modal-img')
+          return (
+            frame.tag === 'img' && frame.attribs?.class?.includes('modal-img')
+          )
         },
       }),
     })),

@@ -23,12 +23,15 @@ export async function GET(Astro) {
 </sitemap>`
   })
 
-  return new Response(`<?xml version="1.0" encoding="UTF-8"?>
+  return new Response(
+    `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   ${sitemaps.join('')}
-</sitemapindex>`, {
-    headers: {
-      'Content-Type': 'application/xml',
+</sitemapindex>`,
+    {
+      headers: {
+        'Content-Type': 'application/xml',
+      },
     },
-  })
+  )
 }

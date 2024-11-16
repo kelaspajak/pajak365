@@ -6,6 +6,12 @@
 
 English | [简体中文](./README.zh-cn.md)
 
+## Prettier pakai ini
+
+https://github.com/withastro/prettier-plugin-astro/issues/358#issuecomment-1646585048
+
+`npx prettier --write **/*.astro .`
+
 ## ✨ Features
 
 - **Turn your Telegram Channel into a MicroBlog**
