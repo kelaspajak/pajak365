@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/base.astro'
+import tiers from '../data/tiers.json'
 ---
 
 <Layout id="main-container">
-  <!-- Hero -->
   <div
     class="relative overflow-hidden before:absolute before:top-1/2 before:start-1/2 before:bg-[url('../svg/component/hyperdrive.svg')] dark:before:bg-[url('../svg/component-dark/hyperdrive.svg')] before:bg-no-repeat before:bg-center before:w-full before:h-96 before:-z-[1] before:transform before:-translate-y-1/2 before:-translate-x-1/2"
   >
@@ -12,9 +12,7 @@ import Layout from '../layouts/base.astro'
         <div
           class="bg-white rounded-xl py-1.5 px-3 text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight dark:bg-neutral-900"
         >
-          <span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-purple-400 text-transparent">
-            200+<!-- 202 -->
-          </span>
+          <span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-purple-400 text-transparent"> 1.200+ </span>
         </div>
       </div>
 
@@ -27,186 +25,185 @@ import Layout from '../layouts/base.astro'
       </p>
     </div>
   </div>
-  <!-- End Hero -->
 
-  <!-- Features -->
   <div class="overflow-hidden">
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <!-- Title -->
       <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
         <h2 class="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
-          Solo, agency or team? We’ve got you covered.
+          Solo, agency or team? Weve got you covered.
         </h2>
       </div>
-      <!-- End Title -->
 
       <div class="relative xl:w-10/12 xl:mx-auto">
-        <!-- Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          <div>
-            <!-- Card -->
-            <div
-              class="p-4 relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900 dark:border-neutral-800"
-            >
-              <h3 class="text-xl font-bold text-gray-800 dark:text-neutral-200">Professional</h3>
-              <div class="text-sm text-gray-500 dark:text-neutral-500">Everything a small team needs.</div>
+        <div class="mx-auto py-12 grid grid-cols-2 gap-4 sm:gap-6">
+          {
+            tiers.map((tier, tierIdx) => (
+              <div>
+                <div class="p-4 relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900 dark:border-neutral-800">
+                  <h3 class="text-xl font-bold text-gray-800 dark:text-neutral-200">{tier.title}</h3>
+                  <div class="text-sm text-gray-500 dark:text-neutral-500">Everything a small team needs.</div>
 
-              <div class="mt-5">
-                <span class="text-6xl font-bold text-gray-800 dark:text-neutral-200">$18</span>
-                <span class="text-lg font-bold text-gray-800 dark:text-neutral-200">.00</span>
-                <span class="ms-3 text-gray-500 dark:text-neutral-500">USD / monthly</span>
-              </div>
+                  <div class="mt-5">
+                    <span class="text-6xl font-bold text-gray-800 dark:text-neutral-200">$18</span>
+                    <span class="text-lg font-bold text-gray-800 dark:text-neutral-200">.00</span>
+                    <span class="ms-3 text-gray-500 dark:text-neutral-500">USD / monthly</span>
+                  </div>
 
-              <div class="mt-5 grid sm:grid-cols-2 gap-y-2 py-4 first:pt-0 last:pb-0 sm:gap-x-6 sm:gap-y-0">
-                <!-- List -->
-                <ul class="space-y-2 text-sm sm:text-base">
-                  <li class="flex gap-x-3">
-                    <span
-                      class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg
+                  <div class="mt-5 grid sm:grid-cols-2 gap-y-2 py-4 first:pt-0 last:pb-0 sm:gap-x-6 sm:gap-y-0">
+                    <ul class="space-y-2 text-sm sm:text-base">
+                      <li class="flex gap-x-3">
+                        <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Up to 10 people </span>
+                      </li>
+
+                      <li class="flex gap-x-3">
+                        <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Collect data </span>
+                      </li>
+
+                      <li class="flex gap-x-3">
+                        <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Code extensibility </span>
+                      </li>
+                    </ul>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                      <li class="flex gap-x-3">
+                        <span class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <>
+                              <path d="M18 6 6 18" />
+                              <path d="m6 6 12 12" />
+                            </>
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Custom reports </span>
+                      </li>
+
+                      <li class="flex gap-x-3">
+                        <span class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <>
+                              <path d="M18 6 6 18" />
+                              <path d="m6 6 12 12" />
+                            </>
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Product support </span>
+                      </li>
+
+                      <li class="flex gap-x-3">
+                        <span class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500">
+                          <svg
+                            class="shrink-0 size-3.5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <>
+                              <path d="M18 6 6 18" />
+                              <path d="m6 6 12 12" />
+                            </>
+                          </svg>
+                        </span>
+                        <span class="text-gray-800 dark:text-neutral-200"> Activity reporting </span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
+                    <div>
+                      <p class="text-sm text-gray-500 dark:text-neutral-500">Cancel anytime.</p>
+                      <p class="text-sm text-gray-500 dark:text-neutral-500">No card required.</p>
+                    </div>
+
+                    <div class="flex justify-end">
+                      <button
+                        type="button"
+                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                       >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Up to 10 people </span>
-                  </li>
-
-                  <li class="flex gap-x-3">
-                    <span
-                      class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg
-                      >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Collect data </span>
-                  </li>
-
-                  <li class="flex gap-x-3">
-                    <span
-                      class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-800/30 dark:text-blue-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg
-                      >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Code extensibility </span>
-                  </li>
-                </ul>
-                <!-- End List -->
-
-                <!-- List -->
-                <ul class="space-y-2 text-sm sm:text-base">
-                  <li class="flex gap-x-3">
-                    <span
-                      class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
-                      >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Custom reports </span>
-                  </li>
-
-                  <li class="flex gap-x-3">
-                    <span
-                      class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
-                      >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Product support </span>
-                  </li>
-
-                  <li class="flex gap-x-3">
-                    <span
-                      class="size-5 flex justify-center items-center rounded-full bg-gray-50 text-gray-500 dark:bg-neutral-800 dark:text-neutral-500"
-                    >
-                      <svg
-                        class="shrink-0 size-3.5"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg
-                      >
-                    </span>
-                    <span class="text-gray-800 dark:text-neutral-200"> Activity reporting </span>
-                  </li>
-                </ul>
-                <!-- End List -->
-              </div>
-
-              <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
-                <div>
-                  <p class="text-sm text-gray-500 dark:text-neutral-500">Cancel anytime.</p>
-                  <p class="text-sm text-gray-500 dark:text-neutral-500">No card required.</p>
+                        Start free trial
+                      </button>
+                    </div>
+                  </div>
                 </div>
-
-                <div class="flex justify-end">
-                  <button
-                    type="button"
-                    class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                    >Start free trial</button
-                  >
-                </div>
               </div>
-            </div>
-            <!-- End Card -->
-          </div>
+            ))
+          }
 
           <div>
-            <!-- Card -->
             <div
               class="shadow-xl shadow-gray-200 p-5 relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900 dark:border-neutral-800 dark:shadow-gray-900/20"
             >
@@ -224,7 +221,6 @@ import Layout from '../layouts/base.astro'
               </div>
 
               <div class="mt-5 grid sm:grid-cols-2 gap-y-2 py-4 first:pt-0 last:pb-0 sm:gap-x-6 sm:gap-y-0">
-                <!-- List -->
                 <ul class="space-y-2 text-sm sm:text-base">
                   <li class="flex gap-x-3">
                     <span
@@ -286,9 +282,6 @@ import Layout from '../layouts/base.astro'
                     <span class="text-gray-800 dark:text-neutral-200"> Code extensibility </span>
                   </li>
                 </ul>
-                <!-- End List -->
-
-                <!-- List -->
                 <ul class="space-y-2 text-sm sm:text-base">
                   <li class="flex gap-x-3">
                     <span
@@ -350,7 +343,6 @@ import Layout from '../layouts/base.astro'
                     <span class="text-gray-800 dark:text-neutral-200"> Activity reporting </span>
                   </li>
                 </ul>
-                <!-- End List -->
               </div>
 
               <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
@@ -368,12 +360,9 @@ import Layout from '../layouts/base.astro'
                 </div>
               </div>
             </div>
-            <!-- End Card -->
           </div>
         </div>
-        <!-- End Grid -->
 
-        <!-- SVG Element -->
         <div class="hidden md:block absolute top-0 end-0 translate-y-16 translate-x-16">
           <svg
             class="w-16 h-auto text-orange-500"
@@ -400,9 +389,7 @@ import Layout from '../layouts/base.astro'
               stroke-linecap="round"></path>
           </svg>
         </div>
-        <!-- End SVG Element -->
 
-        <!-- SVG Element -->
         <div class="hidden md:block absolute bottom-0 start-0 translate-y-16 -translate-x-16">
           <svg
             class="w-56 h-auto text-cyan-500"
@@ -419,7 +406,6 @@ import Layout from '../layouts/base.astro'
               stroke-linecap="round"></path>
           </svg>
         </div>
-        <!-- End SVG Element -->
       </div>
 
       <div class="mt-7 text-center">
@@ -427,53 +413,41 @@ import Layout from '../layouts/base.astro'
       </div>
     </div>
   </div>
-  <!-- End Features -->
 
-  <!-- Comparison Table -->
   <div class="relative">
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 md:py-14 lg:py-20 mx-auto">
       <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
         <h2 class="text-2xl font-bold md:text-3xl md:leading-tight dark:text-white">Compare plans</h2>
       </div>
 
-      <!-- Header -->
       <div class="hidden lg:block sticky top-0 start-0 py-2 bg-white/60 backdrop-blur-md dark:bg-neutral-900/60">
-        <!-- Grid -->
         <div class="grid grid-cols-6 gap-6">
           <div class="col-span-2">
             <span class="font-semibold text-lg text-gray-800 dark:text-neutral-200"> Features </span>
           </div>
-          <!-- End Col -->
 
           <div class="col-span-1">
             <span class="font-semibold text-lg text-gray-800 dark:text-neutral-200"> Free </span>
             <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">Free forever</p>
           </div>
-          <!-- End Col -->
 
           <div class="col-span-1">
             <span class="font-semibold text-lg text-gray-800 dark:text-neutral-200"> Startup </span>
             <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">$39 per month billed annually</p>
           </div>
-          <!-- End Col -->
 
           <div class="col-span-1">
             <span class="font-semibold text-lg text-gray-800 dark:text-neutral-200"> Team </span>
             <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">$89 per month billed annually</p>
           </div>
-          <!-- End Col -->
 
           <div class="col-span-1">
             <span class="font-semibold text-lg text-gray-800 dark:text-neutral-200"> Enterprise </span>
             <p class="mt-2 text-sm text-gray-500 dark:text-neutral-500">$149 per month billed annually</p>
           </div>
-          <!-- End Col -->
         </div>
-        <!-- End Grid -->
       </div>
-      <!-- End Header -->
 
-      <!-- Button Group -->
       <div class="mt-8 md:mt-12 flex justify-center items-center gap-x-3">
         <p class="text-sm text-gray-500 dark:text-neutral-400">Need a custom plan?</p>
 
@@ -484,8 +458,6 @@ import Layout from '../layouts/base.astro'
           Contact us
         </button>
       </div>
-      <!-- End Button Group -->
     </div>
   </div>
-  <!-- End Comparison Table -->
 </Layout>
