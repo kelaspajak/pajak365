@@ -1,31 +1,31 @@
 [
   {
-    "title": "Hobby",
+    "title": "Gudang Arsip",
     "id": "tier-hobby",
-    "href": "#",
-    "priceMonthly": "$29",
-    "description": "The perfect plan if youre just getting started with our product.",
+    "href": "/gudang-arsip",
+    "priceMonthly": "Rp1juta",
+    "type": "tahunan",
+    "description": "Arsip perpajakan ada di ujung jari Anda – kapan saja, di mana saja.",
     "features": [
-      "25 products",
-      "Up to 10000 subscribers",
-      "Advanced analytics",
-      "24-hour support response time"
+      "Akses Tanpa Batas",
+      "Koleksi Lengkap dan Up-to-Date",
+      "Sistem Pencarian Pintar",
+      "Kategori dan Tema Terstruktur"
     ],
     "featured": false
   },
   {
-    "title": "Enterprise",
+    "title": "Pembuatan Draf Permohonan",
     "id": "tier-enterprise",
-    "href": "#",
-    "priceMonthly": "$99",
-    "description": "Dedicated support and infrastructure for your company.",
+    "href": "/drafter",
+    "priceMonthly": "Contact Sales",
+    "type": "2 bulan",
+    "description": "Solusi Profesional untuk Surat Permohonan Upaya Hukum Perpajakan",
     "features": [
-      "Unlimited products",
-      "Unlimited subscribers",
-      "Advanced analytics",
-      "Dedicated support representative",
-      "Marketing automations",
-      "Custom integrations"
+      "Permintaan tak terbatas",
+      "Satu permintaan pada satu waktu",
+      "Jeda atau batalkan kapan saja",
+      "Tarif bulanan tetap"
     ],
     "featured": true
   }
