@@ -1,32 +1,35 @@
 ---
-import { Anvil, Aperture, Camera, Check } from 'lucide-react'
+import { Anvil, Aperture, Camera, Check, Zap, Star } from 'lucide-react'
 import Layout from '../layouts/base.astro'
 
 const tiers = [
   {
-    title: 'Hobby',
+    title: 'Gudang Arsip',
     id: 'tier-hobby',
-    href: '#',
-    priceMonthly: '$29',
+    href: '/gudang-arsip',
+    priceMonthly: 'Rp1juta',
     type: 'tahunan',
-    description: 'The perfect plan if youre just getting started with our product.',
-    features: ['25 products', 'Up to 10000 subscribers', 'Advanced analytics', '24-hour support response time'],
+    description: 'Arsip perpajakan ada di ujung jari Anda – kapan saja, di mana saja.',
+    features: [
+      'Akses Tanpa Batas',
+      'Koleksi Lengkap dan Up-to-Date',
+      'Sistem Pencarian Pintar',
+      'Kategori dan Tema Terstruktur',
+    ],
     featured: false,
   },
   {
-    title: 'Enterprise',
+    title: 'Pembuatan Draf Permohonan',
     id: 'tier-enterprise',
-    href: '#',
+    href: '/drafter',
     priceMonthly: 'Contact Sales',
     type: '2 bulan',
-    description: 'Dedicated support and infrastructure for your company.',
+    description: 'Solusi Profesional untuk Surat Permohonan Upaya Hukum Perpajakan',
     features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      'Dedicated support representative',
-      'Marketing automations',
-      'Custom integrations',
+      'Permintaan tak terbatas',
+      'Satu permintaan pada satu waktu',
+      'Jeda atau batalkan kapan saja',
+      'Tarif bulanan tetap',
     ],
     featured: true,
   },
@@ -78,11 +81,11 @@ function classNames(...classes) {
       </div>
 
       <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight dark:text-white">
-        Starter Pages &amp; Examples
+        Akses dokumen perpajakan secara instan kapan saja dan di mana saja.
       </h1>
       <p class="mt-4 md:text-lg text-gray-600 dark:text-neutral-400">
-        Free Tailwind CSS resources as building blocks for websites and web applications. Browse pre-built sections,
-        forms, modals, and more.
+        Kami membantu wajib pajak memperoleh dokumen perpajakan yang cepat, akurat, dan sesuai regulasi, memberikan
+        mereka ketenangan pikiran dan lebih banyak waktu untuk fokus pada bisnis mereka.
       </p>
     </div>
   </div>
@@ -90,8 +93,8 @@ function classNames(...classes) {
   <div class="overflow-hidden">
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
       <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-        <h2 class="text-3xl lg:text-4xl text-gray-800 font-bold dark:text-neutral-200">
-          Solo, agency or team? Weve got you covered.
+        <h2 class="text-3xl lg:text-4xl font-bold dark:text-neutral-200">
+          Wajib Pajak, Konsultan Pajak atau Staf Pajak? Kami siap membantu Anda.
         </h2>
       </div>
 
@@ -99,9 +102,7 @@ function classNames(...classes) {
         <div class="mx-auto py-12 grid md:grid-cols-2 gap-4 sm:gap-6 items-center">
           {
             tiers.map((tier, tierIdx) => (
-              <div>
-                {/* shadow-xl shadow-gray-200 p-5 relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900 dark:border-neutral-800 dark:shadow-gray-900/20 */}
-                {/* p-4 relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900 dark:border-neutral-800 */}
+              <a href={tier.href}>
                 <div
                   class={classNames(
                     tier.featured
@@ -110,41 +111,24 @@ function classNames(...classes) {
                     'relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900',
                   )}
                 >
-                  <h3 class="text-xl font-bold text-gray-800 dark:text-neutral-200">{tier.title}</h3>
+                  <h3 class="text-xl font-bold dark:text-neutral-200">{tier.title}</h3>
                   <div class="text-sm text-gray-500 dark:text-neutral-500">{tier.description}</div>
 
-                  <div class="mt-5">
-                    <span class="text-6xl font-bold text-gray-800 dark:text-neutral-200">{tier.priceMonthly}</span>
-                    {/* <span class="text-lg font-bold text-gray-800 dark:text-neutral-200">
-                      .00
+                  {/* harga */}
+                  {/* <div class="mt-5">
+                    <span class="text-6xl font-bold dark:text-neutral-200">
+                      {tier.priceMonthly}
                     </span>
-                    <span class="ms-3 text-gray-500 dark:text-neutral-500">
-                      USD / monthly
-                    </span> */}
-                  </div>
+                  </div> */}
 
                   <div class="mt-5 grid gap-y-2 py-4 first:pt-0 last:pb-0 sm:gap-x-6 sm:gap-y-0">
                     <ul class="space-y-2 text-sm sm:text-base">
                       {tier.features.map((feature) => (
                         <li class="flex gap-x-3">
-                          <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-purple-50 text-purple-600 dark:bg-purple-800/30 dark:text-purple-500">
-                            <Check class="shrink-0 size-3.5" />
-                            {/* <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="shrink-0 size-3.5"
-                            >
-                              <path d="M20 6 9 17l-5-5" />
-                            </svg> */}
+                          <span class="mt-0.5 size-5 flex justify-center items-center">
+                            <Star className="shrink-0 size-4" />
                           </span>
-                          <span class="text-gray-800 dark:text-neutral-200">{feature}</span>
+                          <span class="text-gray-500 text-sm dark:text-neutral-200">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -159,14 +143,14 @@ function classNames(...classes) {
                     <div class="flex justify-end">
                       <button
                         type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
                       >
-                        Start free trial
+                        {tier.type}
                       </button>
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             ))
           }
         </div>
@@ -186,12 +170,12 @@ function classNames(...classes) {
 
       <div class="mt-5 lg:mt-16 grid lg:grid-cols-3 gap-8 lg:gap-12">
         <div class="lg:col-span-1">
-          <h2 class="font-bold text-2xl md:text-3xl text-gray-800 dark:text-neutral-200">
-            We tackle the challenges start-ups face
+          <h2 class="font-bold text-2xl md:text-3xl dark:text-neutral-200">
+            Arsip Digital Perpajakan – Gratis untuk Anda!
           </h2>
-          <p class="mt-2 md:mt-4 text-gray-500 dark:text-neutral-500">
-            Besides working with start-up enterprises as a partner for digitalization, we have built enterprise products
-            for common pain points that we have encountered in various products and projects.
+          <p class="mt-2 md:mt-4 text-sm text-gray-500 dark:text-neutral-500">
+            kumpulan file digital gratis yang dirancang untuk memudahkan Anda dalam memahami dan mematuhi peraturan
+            perpajakan di Indonesia.
           </p>
         </div>
 
@@ -200,30 +184,10 @@ function classNames(...classes) {
             {
               freetools.map((callout) => (
                 <div class="flex gap-x-5">
-                  {/* <svg
-                    class="shrink-0 mt-1 size-6 text-blue-600 dark:text-blue-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <>
-                      <path d="M7 10v12" />
-                      <path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z" />
-                    </>
-                  </svg> */}
-                  <callout.icon
-                    aria-hidden="true"
-                    className="shrink-0 mt-1 size-6 text-purple-600 dark:text-purple-500"
-                  />
+                  <callout.icon aria-hidden="true" className="shrink-0 mt-1 size-6 dark:text-purple-500" />
                   <div class="grow">
-                    <h3 class="text-lg font-semibold text-gray-800 dark:text-white">{callout.name}</h3>
-                    <p class="mt-1 text-gray-600 dark:text-neutral-400">{callout.description}</p>
+                    <h3 class="text-lg font-semibold dark:text-white">{callout.name}</h3>
+                    <p class="mt-1 text-sm text-gray-600 dark:text-neutral-400">{callout.description}</p>
                   </div>
                 </div>
               ))
@@ -237,7 +201,7 @@ function classNames(...classes) {
 
         <button
           type="button"
-          class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+          class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
         >
           Contact us
         </button>
