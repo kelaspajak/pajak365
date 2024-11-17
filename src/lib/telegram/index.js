@@ -1,9 +1,9 @@
-import { $fetch } from 'ofetch'
 import * as cheerio from 'cheerio'
-import { LRUCache } from 'lru-cache'
 import flourite from 'flourite'
-import prism from '../prism'
+import { LRUCache } from 'lru-cache'
+import { $fetch } from 'ofetch'
 import { getEnv } from '../env'
+import prism from '../prism'
 
 const cache = new LRUCache({
   ttl: 1000 * 60 * 5, // 5 minutes
@@ -169,7 +169,9 @@ function modifyHTMLContent($, content, { index } = {}) {
 }
 
 function getPost($, item, { channel, staticProxy, index = 0 }) {
-  item = item ? $(item).find('.tgme_widget_message') : $('.tgme_widget_message')
+  item = item
+    ? $(item).find('.tgme_widget_message')
+    : $('.tgme_widget_message')
   const content
     = $(item).find('.js-message_reply_text')?.length > 0
       ? modifyHTMLContent(
@@ -214,7 +216,9 @@ function getPost($, item, { channel, staticProxy, index = 0 }) {
       getImageStickers($, item, { staticProxy, index }),
       getVideoStickers($, item, { staticProxy, index }),
       // $(item).find('.tgme_widget_message_sticker_wrap')?.html(),
-      $(item).find('.tgme_widget_message_poll')?.html(),
+      $(item)
+        .find('.tgme_widget_message_poll')
+        ?.html(),
       $.html($(item).find('.tgme_widget_message_document_wrap')),
       $.html($(item).find('.tgme_widget_message_video_player.not_supported')),
       $.html($(item).find('.tgme_widget_message_location_wrap')),

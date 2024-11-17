@@ -1,7 +1,7 @@
 ---
 import { SEO } from 'astro-seo'
-import { getEnv } from '../lib/env'
 import Navbar from '../components/navbar.astro'
+import { getEnv } from '../lib/env'
 import '../assets/global.css'
 
 const { SITE_URL, RSS_URL, RSS_PREFIX } = Astro.locals
@@ -27,7 +27,7 @@ const seoParams = {
       type: 'website',
       title: channel?.title ?? '',
       url: canonical,
-      image: channel?.avatar ? channel.avatar : origin + '/favicon.ico',
+      image: channel?.avatar ? channel.avatar : `${origin}/favicon.ico`,
     },
     optional: {
       description: seo?.text ?? channel?.description,

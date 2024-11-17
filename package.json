@@ -10,8 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "biome lint --write .",
+    "lint:fix": "biome check --write .",
     "postinstall": "test -d .git && simple-git-hooks || false"
   },
   "dependencies": {
@@ -41,6 +41,7 @@
     "@astrojs/netlify": "^5.5.1",
     "@astrojs/node": "^8.3.3",
     "@astrojs/vercel": "^7.8.0",
+    "@biomejs/biome": "1.9.4",
     "@types/prismjs": "^1.26.4",
     "astro": "^4.15.1",
     "astro-eslint-parser": "^1.0.2",
@@ -63,7 +64,5 @@
   "lint-staged": {
     "*": "eslint --fix"
   },
-  "browserslist": [
-    "defaults"
-  ]
+  "browserslist": ["defaults"]
 }

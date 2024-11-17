@@ -1,8 +1,8 @@
 ---
-import Layout from '../layouts/base.astro'
 import Header from '../components/header.astro'
-import { getChannelInfo } from '../lib/telegram'
+import Layout from '../layouts/base.astro'
 import { getEnv } from '../lib/env'
+import { getChannelInfo } from '../lib/telegram'
 
 const channel = await getChannelInfo(Astro)
 
