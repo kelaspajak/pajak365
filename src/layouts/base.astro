@@ -86,7 +86,7 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
     <Fragment set:html={HEADER_INJECT} />
   </head>
 
-  <body>
+  <body class="bg-gray-100">
     <Navbar />
 
     <slot />
