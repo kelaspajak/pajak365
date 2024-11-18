@@ -1,5 +1,5 @@
 ---
-import { Anvil, Aperture, Camera, Check, Star, Zap } from 'lucide-react'
+import { Anvil, Aperture, Camera, Check, Zap } from 'lucide-react'
 import tiers from '../data/tiers.json'
 import Layout from '../layouts/base.astro'
 
@@ -7,22 +7,25 @@ const pdfs = [
   {
     kategori: 'Desk and Office',
     breadcrumbs: [
-      { id: 1, name: 'Divide Color', href: '#' },
-      { id: 2, name: 'Utilities for controlling', href: '#' },
+      { name: 'Divide Color', href: '#' },
+      { name: 'Utilities for controlling', href: '#' },
+      { name: 'Divide Color', href: '#' },
+      { name: 'Utilities for controlling', href: '#' },
+      { name: 'Push to deploy', href: '/' },
     ],
   },
   {
     kategori: 'Self-Improvement',
     breadcrumbs: [
-      { id: 1, name: 'Men', href: '#' },
-      { id: 2, name: 'Clothing', href: '#' },
+      { name: 'Men', href: '#' },
+      { name: 'Clothing', href: '#' },
     ],
   },
   {
     kategori: 'Travel',
     breadcrumbs: [
-      { id: 1, name: 'Men', href: '#' },
-      { id: 2, name: 'Clothing', href: '#' },
+      { name: 'Men', href: '#' },
+      { name: 'Clothing', href: '#' },
     ],
   },
 ]
@@ -63,7 +66,7 @@ function classNames(...classes) {
         </h2>
       </div>
 
-      <div class="relative xl:w-10/12 xl:mx-auto">
+      <div class="relative xl:w-full xl:mx-auto">
         <div class="mx-auto py-12 grid md:grid-cols-2 gap-4 sm:gap-6 items-center">
           {
             tiers.map((tier, tierIdx) => (
@@ -71,7 +74,7 @@ function classNames(...classes) {
                 <div
                   class={classNames(
                     tier.featured
-                      ? 'shadow-xl shadow-purple-200 p-5 dark:border-neutral-800 dark:shadow-purple-900/20'
+                      ? 'bg-purple-100 shadow-xl shadow-purple-200 p-5 dark:border-neutral-800 dark:shadow-purple-900/20'
                       : 'p-4 dark:border-neutral-800',
                     'relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900',
                   )}
@@ -86,23 +89,61 @@ function classNames(...classes) {
                     </span>
                   </div> */}
 
-                  <div class="mt-5 grid gap-y-2 py-4 first:pt-0 last:pb-0 sm:gap-x-6 sm:gap-y-0">
-                    <ul class="space-y-2 text-sm sm:text-base">
-                      {tier.features.map((feature) => (
-                        <li class="flex gap-x-3">
-                          <span class="mt-0.5 size-5 flex justify-center items-center">
-                            <Star className="shrink-0 size-4 text-gray-500 dark:text-neutral-200" />
-                          </span>
-                          <span class="text-sm text-gray-500 dark:text-neutral-200">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
+                  {/* https://tailwindui.com/templates/catalyst */}
+                  <ul class="mt-10 space-y-8 border-t border-slate-900/10 pt-10 text-sm/6 text-slate-700">
+                    {tier.features.map((feature) => (
+                      <li class="flex">
+                        <span class="size-5 flex justify-center items-center">
+                          <Check className="shrink-0 size-4 text-gray-900 dark:text-neutral-200" />
+                        </span>
+                        <p class="ml-5 text-sm text-gray-600">
+                          <strong class="font-semibold text-gray-700">{feature.title}</strong> — {feature.subtitle}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  {tier.featured && (
+                    <div class="relative mt-10 flex rounded-xl border border-slate-600/10 bg-slate-50 p-6">
+                      <svg
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="size-8 flex-none"
+                        stroke="#94A3B8"
+                        stroke-width="1.5"
+                      >
+                        <circle cx="11" cy="16" r="3.25" fill="#94A3B8" fill-opacity=".2" />
+                        <circle cx="21" cy="13" r="3.25" fill="#94A3B8" fill-opacity=".2" />
+                        <path
+                          d="M28.909 19c.223-.964.341-1.968.341-3 0-7.318-5.932-13.25-13.25-13.25S2.75 8.682 2.75 16c0 1.032.118 2.036.341 3"
+                          stroke-linecap="round"
+                        />
+                        <path
+                          d="m18.031 29.016-2.187.109s-1.475-.118-1.827-.29c-1.049-.51-.579-2.915 0-3.95 1.157-2.064 3.752-5.135 7.125-5.135h.024c2.5 0 4.404 1.687 5.692 3.401-1.963 2.975-5.161 5.276-8.827 5.865Z"
+                          fill="#94A3B8"
+                          fill-opacity=".2"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="m14.001 24.913.016-.027c.26-.465.593-.98.991-1.5-1.042-.918-2.374-1.636-3.988-1.636H11c-2.094 0-3.847 1.208-5.055 2.492a12.987 12.987 0 0 0 7.987 4.595l.057-.016c-1.004-.534-.555-2.868.012-3.908Z"
+                          fill="#94A3B8"
+                          fill-opacity=".2"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p class="ml-5 text-sm/6 text-slate-700">
+                        <strong class="font-semibold text-slate-900">Available for teams</strong> — get access to all of
+                        our templates and components plus any future updates for your entire team.
+                      </p>
+                    </div>
+                  )}
+                  {/* <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
                     <div>
-                      <p class="text-sm text-gray-500 dark:text-neutral-500">Cancel anytime.</p>
-                      <p class="text-sm text-gray-500 dark:text-neutral-500">No card required.</p>
+                      <p class="text-sm text-gray-500 dark:text-neutral-500">
+                        Cancel anytime.
+                      </p>
+                      <p class="text-sm text-gray-500 dark:text-neutral-500">
+                        No card required.
+                      </p>
                     </div>
 
                     <div class="flex justify-end">
@@ -113,7 +154,7 @@ function classNames(...classes) {
                         {tier.type}
                       </button>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </a>
             ))
@@ -121,9 +162,9 @@ function classNames(...classes) {
         </div>
       </div>
 
-      <div class="mt-7 text-center">
+      <!-- <div class="mt-7 text-center">
         <p class="text-xs text-gray-400">Prices in USD. Taxes may apply.</p>
-      </div>
+      </div> -->
     </div>
   </div>
 
@@ -134,11 +175,11 @@ function classNames(...classes) {
     <div class="grid md:grid-cols-2 gap-12">
       <div class="lg:w-3/4">
         <h2 class="text-3xl text-gray-800 font-bold lg:text-4xl dark:text-white">
-          Collaborative tools to design better user experience
+          Informasi di tangan Anda, solusi untuk kewajiban perpajakan Anda.
         </h2>
         <p class="mt-3 text-gray-800 dark:text-neutral-400">
-          We help businesses bring ideas to life in the digital world, by designing and implementing the technology
-          tools that they need to win.
+          Dokumen dikelompokkan berdasarkan kategori seperti jenis pajak, regulasi, dan tema sosialisasi, sehingga Anda
+          dapat menemukan apa yang dibutuhkan dengan cepat.
         </p>
         <p class="mt-5">
           <a
@@ -189,13 +230,16 @@ function classNames(...classes) {
               </span>
               <div class="grow">
                 <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">{pdf.kategori}</h3>
-                <p class="mt-1">
+
+                <ul>
                   {pdf.breadcrumbs.map((breadcrumb) => (
-                    <a href={breadcrumb.href} class="mr-2 text-sm font-medium text-blue-600 after:content-['_↗']">
-                      {breadcrumb.name}
-                    </a>
+                    <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-600 dark:text-neutral-200">
+                      <a href="/" class="text-blue-600">
+                        {breadcrumb.name}
+                      </a>
+                    </li>
                   ))}
-                </p>
+                </ul>
               </div>
             </div>
           ))

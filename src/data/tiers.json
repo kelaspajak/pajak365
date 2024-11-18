@@ -1,16 +1,32 @@
 [
   {
-    "title": "Gudang Arsip",
+    "title": "Perpustakaan Pajak Digital",
     "id": "tier-hobby",
     "href": "/gudang-arsip",
     "priceMonthly": "Rp1juta",
     "type": "tahunan",
-    "description": "Arsip perpajakan ada di ujung jari Anda – kapan saja, di mana saja.",
+    "description": "Platform berbasis langganan untuk mengakses koleksi file edukasi perpajakan.",
     "features": [
-      "Akses Tanpa Batas",
-      "Koleksi Lengkap dan Up-to-Date",
-      "Sistem Pencarian Pintar",
-      "Kategori dan Tema Terstruktur"
+      {
+        "title": "Panduan resmi peraturan perpajakan.",
+        "subtitle": "Semua dokumen tersedia 24/7 dengan akses mudah dari berbagai perangkat."
+      },
+      {
+        "title": "Hemat Waktu dan Biaya",
+        "subtitle": "Tidak perlu mencari dokumen manual, semuanya ada di satu tempat."
+      },
+      {
+        "title": "Informasi Selalu Terkini",
+        "subtitle": "Arsip diperbarui secara rutin mengikuti perubahan regulasi."
+      },
+      {
+        "title": "Navigasi yang Praktis",
+        "subtitle": "Temukan dokumen yang Anda butuhkan dalam hitungan detik dengan fitur pencarian pintar."
+      },
+      {
+        "title": "Keamanan Data Terjamin",
+        "subtitle": "Arsip digital Anda disimpan dengan teknologi enkripsi modern."
+      }
     ],
     "featured": false
   },
@@ -20,12 +36,28 @@
     "href": "/drafter",
     "priceMonthly": "Contact Sales",
     "type": "2 bulan",
-    "description": "Solusi Profesional untuk Surat Permohonan Upaya Hukum Perpajakan",
+    "description": "Solusi Profesional untuk Surat Permohonan Upaya Hukum Perpajakan – Andalkan Kami untuk Setiap Langkah Hukum Pajak Anda.",
     "features": [
-      "Permintaan tak terbatas",
-      "Satu permintaan pada satu waktu",
-      "Jeda atau batalkan kapan saja",
-      "Tarif bulanan tetap"
+      {
+        "title": "Tim Ahli Berpengalaman",
+        "subtitle": "Kami didukung oleh konsultan pajak dan praktisi hukum berpengalaman yang memahami regulasi perpajakan secara mendalam."
+      },
+      {
+        "title": "Kesesuaian Regulasi",
+        "subtitle": "Semua dokumen disusun sesuai dengan peraturan perundang-undangan perpajakan yang berlaku di Indonesia."
+      },
+      {
+        "title": "Pendekatan Personal",
+        "subtitle": "Kami memahami bahwa setiap kasus berbeda. Solusi kami disesuaikan dengan situasi dan kebutuhan spesifik Anda."
+      },
+      {
+        "title": "Cepat dan Efisien",
+        "subtitle": "Kami memastikan dokumen Anda selesai tepat waktu tanpa mengorbankan kualitas."
+      },
+      {
+        "title": "Privasi Terjamin",
+        "subtitle": "Data dan informasi Anda dijaga dengan tingkat kerahasiaan tertinggi."
+      }
     ],
     "featured": true
   }
