@@ -72,9 +72,13 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
         navigation: auto; /* enabled */
       }
     </style>
-    <!-- HTML in your document's head -->
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <SEO
       titleTemplate={`%s | ${channel?.title}`}
@@ -95,6 +99,8 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
 
     <!-- JS PLUGINS -->
     <!-- Required plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/preline/dist/preline.min.js"></script>
+    <script>
+      import 'preline/dist/preline.js'
+    </script>
   </body>
 </html>
