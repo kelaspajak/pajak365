@@ -6,15 +6,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-/* CSS */
-:root {
-  font-family: 'Public Sans', serif;
-  font-optical-sizing: auto;
-}
-@supports (font-variation-settings: normal) {
-  :root {
-    font-family: 'Public Sans', serif;
-    font-optical-sizing: auto;
+@layer base {
+  html {
+    font-family: 'Public Sans', system-ui, serif;
   }
 }
 
