@@ -94,11 +94,8 @@ const navs = (getEnv(import.meta.env, Astro, 'NAVS') || '')
 
   <body class="bg-gray-100 dark:bg-neutral-900">
     <Navbar />
-
     <slot />
 
-    <!-- JS PLUGINS -->
-    <!-- Required plugins -->
     <script>
       import 'preline/dist/preline.js'
     </script>

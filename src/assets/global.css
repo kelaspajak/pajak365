@@ -8,16 +8,13 @@
 
 /* CSS */
 :root {
-  font-family: Inter, sans-serif;
-  font-feature-settings:
-    'liga' 1,
-    'calt' 1,
-    'ss02' 1,
-    'tnum' 1; /* fix for Chrome */
+  font-family: 'Public Sans', serif;
+  font-optical-sizing: auto;
 }
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: InterVariable, sans-serif;
+    font-family: 'Public Sans', serif;
+    font-optical-sizing: auto;
   }
 }
 
