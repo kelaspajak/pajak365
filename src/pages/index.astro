@@ -1,32 +1,92 @@
 ---
-import { Anvil, Aperture, Camera, Check, Zap } from 'lucide-react'
+import { MoveUpRight, Anvil, Aperture, Hotel, Check, HardHat, BriefcaseBusiness } from 'lucide-react'
 import tiers from '../data/tiers.json'
 import Layout from '../layouts/base.astro'
 
 const pdfs = [
   {
-    kategori: 'Desk and Office',
-    breadcrumbs: [
-      { name: 'Divide Color', href: '#' },
-      { name: 'Utilities for controlling', href: '#' },
-      { name: 'Divide Color', href: '#' },
-      { name: 'Utilities for controlling', href: '#' },
-      { name: 'Push to deploy', href: '/' },
+    kategori: 'PPh Pasal 21',
+    sumber: [
+      { nama: 'penyuluh 403', href: 'https://drive.google.com/drive/u/0/folders/155gGEcHNlpkgkFnpjZOLF8zBDxGVJKWu' },
     ],
+    breadcrumbs: [
+      {
+        name: 'Leaflet PPh Pasal 21 TER',
+        href: 'https://drive.google.com/file/d/19BWEVvVTyC2aa5aWZNFINRVfFPDO2mBo/view?usp=drive_link',
+      },
+      {
+        name: 'Buku Cermat pemotongan PPh 21',
+        href: 'https://drive.google.com/file/d/1we0DLvxbSP8bKqffCKHiHtOr08NcaRmJ/view?usp=drive_link',
+      },
+      {
+        name: 'eBook perekaman PPh 21',
+        href: 'https://drive.google.com/file/d/18GmB5ht1gc4PcQzaXWrPtjVwl0bi7lqm/view?usp=drive_link',
+      },
+      {
+        name: 'Petunjuk ebukpot PPh 21',
+        href: 'https://drive.google.com/file/d/1dow-MG1LC5NtzKGaTYnD6LTsBjUZor5r/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan PMK 168 tahun 2023',
+        href: 'https://drive.google.com/file/d/1x0hKUDqtGcSXJ71LH-h46qO333dct7F5/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan Per 2 tahun 2024',
+        href: 'https://drive.google.com/file/d/1sm2IIbev72OdtSBKQbqFs_9guRgS7GQz/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan PP 58 tahun 2023',
+        href: 'https://drive.google.com/file/d/1Ea4KtQ1DkrA3P_4X1fRy_AUAh-3luLie/view?usp=drive_link',
+      },
+    ],
+    icon: HardHat,
   },
   {
-    kategori: 'Self-Improvement',
-    breadcrumbs: [
-      { name: 'Men', href: '#' },
-      { name: 'Clothing', href: '#' },
+    kategori: 'Aspek Perpajakan Indonesia',
+    sumber: [
+      { nama: 'penyuluh 403', href: 'https://drive.google.com/drive/u/0/folders/155gGEcHNlpkgkFnpjZOLF8zBDxGVJKWu' },
     ],
+    breadcrumbs: [
+      {
+        name: 'Usaha Hotel',
+        href: 'https://docs.google.com/presentation/d/1HKb6n3m-OMOF_7lRIfHDP2fMMok7Fhtc/view?usp=drive_link',
+      },
+      {
+        name: 'Notaris & PPAT',
+        href: 'https://docs.google.com/presentation/d/1I-XyP_q-khn1_JdsyRxPEO_P05j9hj-4/view?usp=drive_link',
+      },
+    ],
+    icon: Hotel,
   },
   {
-    kategori: 'Travel',
-    breadcrumbs: [
-      { name: 'Men', href: '#' },
-      { name: 'Clothing', href: '#' },
+    kategori: 'Pajak UMKM',
+    sumber: [
+      { nama: 'penyuluh 403', href: 'https://drive.google.com/drive/u/0/folders/155gGEcHNlpkgkFnpjZOLF8zBDxGVJKWu' },
     ],
+    breadcrumbs: [
+      {
+        name: 'Leaflet PP23 tahun 2018',
+        href: 'https://drive.google.com/file/d/1oSSk6nkVog7YsEwlfWGAi1RH7sM7809a/view?usp=drive_link',
+      },
+      {
+        name: 'Cara membuat billing ',
+        href: 'https://drive.google.com/file/d/1UCv8aQdYSUBs788s0SaRzJC0oLJtsEsz/view?usp=drive_link',
+      },
+    ],
+    icon: BriefcaseBusiness,
+  },
+  {
+    kategori: 'Lain-lain',
+    sumber: [
+      { nama: 'penyuluh 403', href: 'https://drive.google.com/drive/u/0/folders/155gGEcHNlpkgkFnpjZOLF8zBDxGVJKWu' },
+    ],
+    breadcrumbs: [
+      {
+        name: 'Tabel KLU',
+        href: 'https://docs.google.com/spreadsheets/d/1kBBwnmStl4Pelsi_Uq1fESGQ3sw_Zm0u/view?usp=drive_link',
+      },
+    ],
+    icon: Aperture,
   },
 ]
 
@@ -35,9 +95,9 @@ function classNames(...classes) {
 }
 ---
 
-<Layout id="main-container">
+<Layout>
   <div
-    class="relative overflow-hidden before:absolute before:top-1/2 before:start-1/2 before:bg-[url('../svg/component/hyperdrive.svg')] dark:before:bg-[url('../svg/component-dark/hyperdrive.svg')] before:bg-no-repeat before:bg-center before:w-full before:h-96 before:-z-[1] before:transform before:-translate-y-1/2 before:-translate-x-1/2"
+    class="relative overflow-hidden before:absolute before:top-1/2 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/hyperdrive.svg')] dark:before:bg-[url('../svg/component-dark/hyperdrive.svg')] before:bg-no-repeat before:bg-center before:w-full before:h-96 before:-z-[1] before:transform before:-translate-y-1/2 before:-translate-x-1/2"
   >
     <div class="max-w-3xl mx-auto relative text-center px-4 sm:px-6 lg:px-8 py-10 md:py-24">
       <div class="inline-block bg-gradient-to-tl from-blue-600 via-transparent to-purple-400 p-px rounded-xl mb-3">
@@ -168,16 +228,15 @@ function classNames(...classes) {
     </div>
   </div>
 
-  <!-- FAQ -->
   <!-- Icon Blocks -->
   <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     <!-- Grid -->
     <div class="grid md:grid-cols-2 gap-12">
       <div class="lg:w-3/4">
-        <h2 class="text-3xl text-gray-800 font-bold lg:text-4xl dark:text-white">
+        <h2 class="text-3xl font-bold lg:text-4xl dark:text-white">
           Informasi di tangan Anda, solusi untuk kewajiban perpajakan Anda.
         </h2>
-        <p class="mt-3 text-gray-800 dark:text-neutral-400">
+        <p class="mt-3 dark:text-neutral-400">
           Dokumen dikelompokkan berdasarkan kategori seperti jenis pajak, regulasi, dan tema sosialisasi, sehingga Anda
           dapat menemukan apa yang dibutuhkan dengan cepat.
         </p>
@@ -209,34 +268,24 @@ function classNames(...classes) {
         {
           pdfs.map((pdf, pdfIdx) => (
             <div class="flex gap-x-5 sm:gap-x-8">
-              <span class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg
-                  class="shrink-0 size-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <>
-                    <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z" />
-                    <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
-                  </>
-                </svg>
+              <span class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                <pdf.icon aria-hidden="true" className="shrink-0 size-5" />
               </span>
               <div class="grow">
-                <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">{pdf.kategori}</h3>
-
+                <h3 class="text-base sm:text-lg font-semibold dark:text-neutral-200">{pdf.kategori}</h3>
                 <ul>
                   {pdf.breadcrumbs.map((breadcrumb) => (
-                    <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-600 dark:text-neutral-200">
-                      <a href="/" class="text-blue-600">
+                    <li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-500 dark:text-neutral-200">
+                      <a href="/" class="">
                         {breadcrumb.name}
-                      </a>
+                      </a>{' '}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-3.5">
+                        <path
+                          fill-rule="evenodd"
+                          d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
                     </li>
                   ))}
                 </ul>
