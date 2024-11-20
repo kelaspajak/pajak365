@@ -3,7 +3,7 @@ import { Anvil, Aperture, BriefcaseBusiness, Check, HardHat, Hotel, MoveUpRight 
 import tiers from '../data/tiers.json'
 import Layout from '../layouts/base.astro'
 
-const product = [
+const products = [
   {
     name: 'PPh Pasal 21',
     features: [
@@ -378,35 +378,26 @@ const navigation = {
       </div>
       <!-- End Col -->
 
-      <div class="space-y-6 lg:space-y-10">
-        <!-- Icon Block -->
-        {
-          product.map((product) => (
-            <div class="flex gap-x-5 sm:gap-x-8">
-              <span class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <product.icon className="shrink-0 size-5 text-black" />
-              </span>
-              <div class="grow">
-                <h3 class="text-base sm:text-lg font-semibold dark:text-neutral-200">{product.name}</h3>
-                {product.features.map((feature) => (
-                  <p>
-                    <a
-                      class="inline-flex text-sm gap-x-2 text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
-                      href={feature.href}
-                      target="_blank"
-                    >
-                      {feature.name}
-                    </a>
-                  </p>
-                ))}
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+          {
+            products.map((product) => (
+              <div class="relative pl-16">
+                <dt class="text-base/7 font-semibold text-gray-900">
+                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+                    <product.icon aria-hidden="true" class="size-6 text-white" />
+                  </div>
+                  {product.name}
+                </dt>
+                <dd class="mt-2 text-base/7 text-gray-600">ga</dd>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </dl>
       </div>
-      <!-- End Col -->
+
+      <!-- End Grid -->
     </div>
-    <!-- End Grid -->
+    <!-- End Icon Blocks -->
   </div>
-  <!-- End Icon Blocks -->
 </Layout>
