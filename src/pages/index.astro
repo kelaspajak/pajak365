@@ -54,6 +54,32 @@ const product = [
     icon: 'Hotel',
     featured: true,
   },
+  {
+    name: 'Pajak UMKM',
+    features: [
+      {
+        name: 'Leaflet PP23 tahun 2018',
+        href: 'https://drive.google.com/file/d/1oSSk6nkVog7YsEwlfWGAi1RH7sM7809a/view?usp=drive_link',
+      },
+      {
+        name: 'Cara membuat billing ',
+        href: 'https://drive.google.com/file/d/1UCv8aQdYSUBs788s0SaRzJC0oLJtsEsz/view?usp=drive_link',
+      },
+    ],
+    icon: 'BriefcaseBusiness',
+    featured: true,
+  },
+  {
+    name: 'Lain-lain',
+    features: [
+      {
+        name: 'Tabel KLU',
+        href: 'https://docs.google.com/spreadsheets/d/1kBBwnmStl4Pelsi_Uq1fESGQ3sw_Zm0u/view?usp=drive_link',
+      },
+    ],
+    icon: 'Aperture',
+    featured: true,
+  },
 ]
 
 function classNames(...classes) {
@@ -235,23 +261,7 @@ function classNames(...classes) {
           product.map((product) => (
             <div class="flex gap-x-5 sm:gap-x-8">
               <span class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
-                <svg
-                  class="shrink-0 size-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <>
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-                  </>
-                </svg>
+                <product.icon className="shrink-0 size-5 text-black" />
               </span>
               <div class="grow">
                 <h3 class="text-base sm:text-lg font-semibold dark:text-neutral-200">{product.name}</h3>
@@ -260,6 +270,7 @@ function classNames(...classes) {
                     <a
                       class="inline-flex text-sm gap-x-2 text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
                       href={feature.href}
+                      target="_blank"
                     >
                       {feature.name}
                     </a>
