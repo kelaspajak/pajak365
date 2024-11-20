@@ -36,7 +36,7 @@ const products = [
         href: 'https://drive.google.com/file/d/1Ea4KtQ1DkrA3P_4X1fRy_AUAh-3luLie/view?usp=drive_link',
       },
     ],
-    icon: 'HardHat',
+    icon: 'BeakerIcon',
     featured: false,
   },
   {
@@ -85,148 +85,25 @@ const products = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-
-const navigation = {
-  categories: [
-    {
-      id: 'women',
-      name: 'Women',
-      featured: [
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt: 'Models sitting back to back, wearing Basic Tee in black and bone.',
-        },
-        {
-          name: 'Basic Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt: 'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
-        },
-      ],
-      sections: [
-        {
-          id: 'clothing',
-          name: 'Clothing',
-          items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Dresses', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Denim', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
-          ],
-        },
-        {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Significant Other', href: '#' },
-          ],
-        },
-      ],
-    },
-    {
-      id: 'men',
-      name: 'Men',
-      featured: [
-        {
-          name: 'New Arrivals',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg',
-          imageAlt: 'Drawstring top with elastic loop closure and textured interior padding.',
-        },
-        {
-          name: 'Artwork Tees',
-          href: '#',
-          imageSrc: 'https://tailwindui.com/plus/img/ecommerce-images/category-page-02-image-card-06.jpg',
-          imageAlt:
-            'Three shirts in gray, white, and blue arranged on table with same line drawing of hands and shapes overlapping on front of shirt.',
-        },
-      ],
-      sections: [
-        {
-          id: 'clothing',
-          name: 'Clothing',
-          items: [
-            { name: 'Tops', href: '#' },
-            { name: 'Pants', href: '#' },
-            { name: 'Sweaters', href: '#' },
-            { name: 'T-Shirts', href: '#' },
-            { name: 'Jackets', href: '#' },
-            { name: 'Activewear', href: '#' },
-            { name: 'Browse All', href: '#' },
-          ],
-        },
-        {
-          id: 'accessories',
-          name: 'Accessories',
-          items: [
-            { name: 'Watches', href: '#' },
-            { name: 'Wallets', href: '#' },
-            { name: 'Bags', href: '#' },
-            { name: 'Sunglasses', href: '#' },
-            { name: 'Hats', href: '#' },
-            { name: 'Belts', href: '#' },
-          ],
-        },
-        {
-          id: 'brands',
-          name: 'Brands',
-          items: [
-            { name: 'Re-Arranged', href: '#' },
-            { name: 'Counterfeit', href: '#' },
-            { name: 'Full Nelson', href: '#' },
-            { name: 'My Way', href: '#' },
-          ],
-        },
-      ],
-    },
-  ],
-  pages: [
-    { name: 'Company', href: '#' },
-    { name: 'Stores', href: '#' },
-  ],
-}
 ---
 
 <Layout>
   <div
-    class="relative overflow-hidden before:absolute before:top-1/2 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/component/hyperdrive.svg')] dark:before:bg-[url('../svg/component-dark/hyperdrive.svg')] before:bg-no-repeat before:bg-center before:w-full before:h-96 before:-z-[1] before:transform before:-translate-y-1/2 before:-translate-x-1/2"
+    class="relative overflow-hidden before:absolute before:start-1/2 before:top-1/2 before:-z-[1] before:h-96 before:w-full before:-translate-x-1/2 before:-translate-y-1/2 before:transform before:bg-[url('https://preline.co/assets/svg/component/hyperdrive.svg')] before:bg-center before:bg-no-repeat dark:before:bg-[url('../svg/component-dark/hyperdrive.svg')]"
   >
-    <div class="max-w-3xl mx-auto relative text-center px-4 sm:px-6 lg:px-8 py-10 md:py-24">
-      <div class="inline-block bg-gradient-to-tl from-blue-600 via-transparent to-purple-400 p-px rounded-xl mb-3">
+    <div class="relative mx-auto max-w-3xl px-4 py-10 text-center sm:px-6 md:py-24 lg:px-8">
+      <div class="mb-3 inline-block rounded-xl bg-gradient-to-tl from-blue-600 via-transparent to-purple-400 p-px">
         <div
-          class="bg-white rounded-xl py-1.5 px-3 text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight dark:bg-neutral-900"
+          class="rounded-xl bg-white px-3 py-1.5 text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight dark:bg-neutral-900"
         >
-          <span class="bg-clip-text bg-gradient-to-tl from-blue-600 to-purple-400 text-transparent"> 1.200+ </span>
+          <span class="bg-gradient-to-tl from-blue-600 to-purple-400 bg-clip-text text-transparent"> 1.200+ </span>
         </div>
       </div>
 
       <h1 class="text-3xl font-bold md:text-4xl lg:text-5xl lg:leading-tight dark:text-white">
         Akses dokumen perpajakan secara instan kapan saja dan di mana saja.
       </h1>
-      <p class="mt-4 md:text-lg text-gray-600 dark:text-neutral-400">
+      <p class="mt-4 text-gray-600 md:text-lg dark:text-neutral-400">
         Kami membantu wajib pajak memperoleh dokumen perpajakan yang cepat, akurat, dan sesuai regulasi, memberikan
         mereka ketenangan pikiran dan lebih banyak waktu untuk fokus pada bisnis mereka.
       </p>
@@ -234,41 +111,34 @@ const navigation = {
   </div>
 
   <div class="overflow-hidden">
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
-      <div class="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
-        <h2 class="text-3xl lg:text-4xl font-bold dark:text-neutral-200">
+    <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+      <div class="mx-auto mb-8 max-w-2xl text-center lg:mb-14">
+        <h2 class="text-3xl font-bold lg:text-4xl dark:text-neutral-200">
           Wajib Pajak, Konsultan Pajak atau Staf Pajak? Kami siap membantu Anda.
         </h2>
       </div>
 
-      <div class="relative xl:w-full xl:mx-auto">
-        <div class="mx-auto py-12 grid md:grid-cols-2 gap-4 sm:gap-6 items-center">
+      <div class="relative xl:mx-auto xl:w-full">
+        <div class="mx-auto grid items-center gap-4 py-12 sm:gap-6 md:grid-cols-2">
           {
             tiers.map((tier, tierIdx) => (
               <a href={tier.href}>
                 <div
                   class={classNames(
                     tier.featured
-                      ? 'bg-purple-100 shadow-xl shadow-purple-200 p-5 dark:border-neutral-800 dark:shadow-purple-900/20'
+                      ? 'bg-purple-100 p-5 shadow-xl shadow-purple-200 dark:border-neutral-800 dark:shadow-purple-900/20'
                       : 'p-4 dark:border-neutral-800',
-                    'relative z-10 bg-white border rounded-xl md:p-10 dark:bg-neutral-900',
+                    'relative z-10 rounded-xl border bg-white md:p-10 dark:bg-neutral-900',
                   )}
                 >
                   <h3 class="text-xl font-bold dark:text-neutral-200">{tier.title}</h3>
                   <div class="text-sm text-gray-500 dark:text-neutral-500">{tier.description}</div>
 
-                  {/* harga */}
-                  {/* <div class="mt-5">
-                    <span class="text-6xl font-bold dark:text-neutral-200">
-                      {tier.priceMonthly}
-                    </span>
-                  </div> */}
-
                   {/* https://tailwindui.com/templates/catalyst */}
                   <ul class="mt-10 space-y-8 border-t border-slate-900/10 pt-10 text-sm/6 text-slate-700">
                     {tier.features.map((feature) => (
                       <li class="flex">
-                        <span class="size-5 flex justify-center items-center">
+                        <span class="flex size-5 items-center justify-center">
                           <Check className="shrink-0 size-4 text-gray-900 dark:text-neutral-200" />
                         </span>
                         <p class="ml-5 text-sm text-gray-600">
@@ -311,42 +181,19 @@ const navigation = {
                       </p>
                     </div>
                   )}
-                  {/* <div class="mt-5 grid grid-cols-2 gap-x-4 py-4 first:pt-0 last:pb-0">
-                    <div>
-                      <p class="text-sm text-gray-500 dark:text-neutral-500">
-                        Cancel anytime.
-                      </p>
-                      <p class="text-sm text-gray-500 dark:text-neutral-500">
-                        No card required.
-                      </p>
-                    </div>
-
-                    <div class="flex justify-end">
-                      <button
-                        type="button"
-                        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                      >
-                        {tier.type}
-                      </button>
-                    </div>
-                  </div> */}
                 </div>
               </a>
             ))
           }
         </div>
       </div>
-
-      <!-- <div class="mt-7 text-center">
-        <p class="text-xs text-gray-400">Prices in USD. Taxes may apply.</p>
-      </div> -->
     </div>
   </div>
 
   <!-- Icon Blocks -->
-  <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
     <!-- Grid -->
-    <div class="grid md:grid-cols-2 gap-12">
+    <div class="grid gap-12 md:grid-cols-2">
       <div class="lg:w-3/4">
         <h2 class="text-3xl font-bold lg:text-4xl dark:text-white">
           Informasi di tangan Anda, solusi untuk kewajiban perpajakan Anda.
@@ -357,12 +204,12 @@ const navigation = {
         </p>
         <p class="mt-5">
           <a
-            class="inline-flex items-center gap-x-1 text-sm text-blue-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-blue-500"
+            class="inline-flex items-center gap-x-1 text-sm font-medium text-blue-600 decoration-2 hover:underline focus:underline focus:outline-none dark:text-blue-500"
             href="#"
           >
             Contact sales to learn more
             <svg
-              class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
+              class="size-4 shrink-0 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -378,22 +225,23 @@ const navigation = {
       </div>
       <!-- End Col -->
 
-      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-          {
-            products.map((product) => (
-              <div class="relative pl-16">
-                <dt class="text-base/7 font-semibold text-gray-900">
-                  <div class="absolute left-0 top-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                    <product.icon aria-hidden="true" class="size-6 text-white" />
-                  </div>
-                  {product.name}
-                </dt>
-                <dd class="mt-2 text-base/7 text-gray-600">ga</dd>
+      <div class="space-y-6 lg:space-y-10">
+        <!-- Icon Block -->
+        {
+          products.map((product) => (
+            <div class="flex gap-x-5 sm:gap-x-8">
+              <span class="mx-auto inline-flex size-[46px] shrink-0 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-200">
+                <product.icon class="size-5 shrink-0" />
+              </span>
+              <div class="grow">
+                <h3 class="text-sm font-semibold text-gray-600 sm:text-lg dark:text-neutral-200">{product.name}</h3>
+                {product.features.map((feature) => (
+                  <span class="mt-1 text-gray-600 dark:text-neutral-400">{feature.name}</span>
+                ))}
               </div>
-            ))
-          }
-        </dl>
+            </div>
+          ))
+        }
       </div>
 
       <!-- End Grid -->
