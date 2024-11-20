@@ -3,102 +3,32 @@ import { Anvil, Aperture, BriefcaseBusiness, Check, HardHat, Hotel, MoveUpRight 
 import tiers from '../data/tiers.json'
 import Layout from '../layouts/base.astro'
 
-const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
-  href: '#',
-  breadcrumbs: [
-    {
-      id: 1,
-      name: 'Men',
-      href: '#',
-      images: [
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-          alt: 'Two each of gray, white, and black shirts laying flat.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-          alt: 'Model wearing plain black basic tee.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-          alt: 'Model wearing plain gray basic tee.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-          alt: 'Model wearing plain white basic tee.',
-        },
-      ],
-    },
-    {
-      id: 2,
-      name: 'Clothing',
-      href: '#',
-      images: [
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-          alt: 'Two each of gray, white, and black shirts laying flat.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-          alt: 'Model wearing plain black basic tee.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-          alt: 'Model wearing plain gray basic tee.',
-        },
-        {
-          src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-          alt: 'Model wearing plain white basic tee.',
-        },
-      ],
-    },
-  ],
-  images: [
-    {
-      src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
-      alt: 'Two each of gray, white, and black shirts laying flat.',
-    },
-    {
-      src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
-      alt: 'Model wearing plain black basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
-      alt: 'Model wearing plain gray basic tee.',
-    },
-    {
-      src: 'https://tailwindui.com/plus/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
-      alt: 'Model wearing plain white basic tee.',
-    },
-  ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
-  sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
-  ],
-  description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
-  highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
-  ],
-  details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
-}
+const product = [
+  {
+    name: 'Hobby',
+    id: 'tier-hobby',
+    href: '#',
+    priceMonthly: '$29',
+    description: "The perfect plan if you're just getting started with our product.",
+    features: [
+      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+    ],
+    featured: false,
+  },
+  {
+    name: 'Enterprise',
+    id: 'tier-enterprise',
+    href: '#',
+    priceMonthly: '$99',
+    description: 'Dedicated support and infrastructure for your company.',
+    features: [
+      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+    ],
+    featured: true,
+  },
+]
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -275,103 +205,40 @@ function classNames(...classes) {
 
       <div class="space-y-6 lg:space-y-10">
         <!-- Icon Block -->
-        <div class="flex gap-x-5 sm:gap-x-8">
-          <!-- Icon -->
-          <span
-            class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200"
-          >
-            <svg
-              class="shrink-0 size-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path
-                d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg
-            >
-          </span>
-          <div class="grow">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-              Industry-leading documentation
-            </h3>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-              Our documentation and extensive Client libraries contain everything a business needs to build a custom
-              integration in a fraction of the time.
-            </p>
-          </div>
-        </div>
-        <!-- End Icon Block -->
+        {
+          product.map((product) => (
+            <div class="flex gap-x-5 sm:gap-x-8">
+              <span class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
+                <svg
+                  class="shrink-0 size-5"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <>
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                  </>
+                </svg>
+              </span>
+              <div class="grow">
+                <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
+                  Industry-leading documentation
+                </h3>
 
-        <!-- Icon Block -->
-        <div class="flex gap-x-5 sm:gap-x-8">
-          <!-- Icon -->
-          <span
-            class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200"
-          >
-            <svg
-              class="shrink-0 size-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"></path><path
-                d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"></path></svg
-            >
-          </span>
-          <div class="grow">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-              Developer community support
-            </h3>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-              We actively contribute to open-source projects—giving back to the community through development, patches,
-              and sponsorships.
-            </p>
-          </div>
-        </div>
-        <!-- End Icon Block -->
-
-        <!-- Icon Block -->
-        <div class="flex gap-x-5 sm:gap-x-8">
-          <!-- Icon -->
-          <span
-            class="shrink-0 inline-flex justify-center items-center size-[46px] rounded-full border border-gray-200 bg-white text-gray-800 shadow-sm mx-auto dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200"
-          >
-            <svg
-              class="shrink-0 size-5"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              ><path d="M7 10v12"></path><path
-                d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2h0a3.13 3.13 0 0 1 3 3.88Z"
-              ></path></svg
-            >
-          </span>
-          <div class="grow">
-            <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-              Simple and affordable
-            </h3>
-            <p class="mt-1 text-gray-600 dark:text-neutral-400">
-              From boarding passes to movie tickets, there's pretty much nothing you can't store with Preline.
-            </p>
-          </div>
-        </div>
-        <!-- End Icon Block -->
+                <a href="/">
+                  halo <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          ))
+        }
       </div>
       <!-- End Col -->
     </div>
