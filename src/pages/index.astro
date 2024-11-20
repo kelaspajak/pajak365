@@ -5,27 +5,53 @@ import Layout from '../layouts/base.astro'
 
 const product = [
   {
-    name: 'Hobby',
-    id: 'tier-hobby',
-    href: '#',
-    priceMonthly: '$29',
-    description: "The perfect plan if you're just getting started with our product.",
+    name: 'PPh Pasal 21',
     features: [
-      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
-      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+      {
+        name: 'Leaflet PPh Pasal 21 TER',
+        href: 'https://drive.google.com/file/d/19BWEVvVTyC2aa5aWZNFINRVfFPDO2mBo/view?usp=drive_link',
+      },
+      {
+        name: 'Buku Cermat pemotongan PPh 21',
+        href: 'https://drive.google.com/file/d/1we0DLvxbSP8bKqffCKHiHtOr08NcaRmJ/view?usp=drive_link',
+      },
+      {
+        name: 'eBook perekaman PPh 21',
+        href: 'https://drive.google.com/file/d/18GmB5ht1gc4PcQzaXWrPtjVwl0bi7lqm/view?usp=drive_link',
+      },
+      {
+        name: 'Petunjuk ebukpot PPh 21',
+        href: 'https://drive.google.com/file/d/1dow-MG1LC5NtzKGaTYnD6LTsBjUZor5r/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan PMK 168 tahun 2023',
+        href: 'https://drive.google.com/file/d/1x0hKUDqtGcSXJ71LH-h46qO333dct7F5/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan Per 2 tahun 2024',
+        href: 'https://drive.google.com/file/d/1sm2IIbev72OdtSBKQbqFs_9guRgS7GQz/view?usp=drive_link',
+      },
+      {
+        name: 'Paparan PP 58 tahun 2023',
+        href: 'https://drive.google.com/file/d/1Ea4KtQ1DkrA3P_4X1fRy_AUAh-3luLie/view?usp=drive_link',
+      },
     ],
+    icon: 'HardHat',
     featured: false,
   },
   {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    priceMonthly: '$99',
-    description: 'Dedicated support and infrastructure for your company.',
+    name: 'Aspek Perpajakan Indonesia',
     features: [
-      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
-      { name: 'Enterprise', id: 'tier-enterprise', href: '#' },
+      {
+        name: 'Usaha Hotel',
+        href: 'https://docs.google.com/presentation/d/1HKb6n3m-OMOF_7lRIfHDP2fMMok7Fhtc/view?usp=drive_link',
+      },
+      {
+        name: 'Notaris & PPAT',
+        href: 'https://docs.google.com/presentation/d/1I-XyP_q-khn1_JdsyRxPEO_P05j9hj-4/view?usp=drive_link',
+      },
     ],
+    icon: 'Hotel',
     featured: true,
   },
 ]
@@ -228,13 +254,17 @@ function classNames(...classes) {
                 </svg>
               </span>
               <div class="grow">
-                <h3 class="text-base sm:text-lg font-semibold text-gray-800 dark:text-neutral-200">
-                  Industry-leading documentation
-                </h3>
-
-                <a href="/">
-                  halo <span aria-hidden="true">&rarr;</span>
-                </a>
+                <h3 class="text-base sm:text-lg font-semibold dark:text-neutral-200">{product.name}</h3>
+                {product.features.map((feature) => (
+                  <p>
+                    <a
+                      class="inline-flex text-sm gap-x-2 text-gray-500 hover:text-gray-800 focus:outline-none focus:text-gray-800 dark:text-neutral-400 dark:hover:text-neutral-200 dark:focus:text-neutral-200"
+                      href={feature.href}
+                    >
+                      {feature.name}
+                    </a>
+                  </p>
+                ))}
               </div>
             </div>
           ))
